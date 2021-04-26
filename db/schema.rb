@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_04_26_024059) do
 
   create_table "outfits", force: :cascade do |t|
+    t.string "name"
     t.string "tops"
     t.string "bottoms"
     t.integer "user_id"

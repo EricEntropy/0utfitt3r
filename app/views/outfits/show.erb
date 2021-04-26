@@ -1,0 +1,13 @@
+<h1>Your Outfit</h1>
+
+<h2><%=@outfit.name%></h2>
+<h4><%=@outfit.tops%></h4>
+<h4><%=@outfit.bottoms%></h4>
+
+<a href="/outfits/<%=@outfit.id%>/edit">Edit Outfit</a>
+
+<form action="/outfits/<%=@outfit.id%>/delete" method="POST">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<br>
+<input type="submit" value="Delete Outfit">
+</form>

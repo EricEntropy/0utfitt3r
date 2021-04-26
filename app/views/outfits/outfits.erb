@@ -1,0 +1,14 @@
+<h1> Welcome, <%=current_user.username%>! </h1>
+
+<h2> Here are your Outfits: </h2>
+
+<%@outfits.each do |fit|%>
+    <% if !fit.name.empty? && fit.user_id == current_user.id%>
+        <p><%= fit.name%> </p>
+        <p><%= fit.tops%> </p>
+        <p><%= fit.bottoms%> </p>
+    <%else%> <p>No Outfits</p>
+    <%end%>
+<%end%>
+
+<a href="/outfits/new">Create new outfit!</a>

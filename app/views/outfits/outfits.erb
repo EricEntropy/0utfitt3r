@@ -1,14 +1,19 @@
-<h1> Welcome, <%=current_user.username%>! </h1>
+<h1> Welcome, <%=current_user.username.capitalize%>! </h1>
 
+<% if current_user.outfits.empty?%>
+<h2> No Outfits to Show</h2>
+<%else%>
 <h2> Here are your Outfits: </h2>
-
-<%@outfits.each do |fit|%>
-    <% if !fit.name.empty? && fit.user_id == current_user.id%>
-        <p><%= fit.name%> </p>
-        <p><%= fit.tops%> </p>
-        <p><%= fit.bottoms%> </p>
-    <%else%> <p>No Outfits</p>
+    <%@outfits.each do |fit|%>
+        <% if !fit.name.empty? && fit.user_id == current_user.id%>
+        <ul>
+            <li> <b>Name:</b> <%= fit.name.capitalize%></li>
+            <li> <b>Top:</b> <%= fit.tops.capitalize%> </li>
+            <li> <b>Bottoms:</b> <%= fit.bottoms.capitalize%></li>
+            <a href="/outfits/<%=fit.id%>/edit">Edit this outfit</a>
+        </ul>
+        <%end%>
     <%end%>
 <%end%>
-
+<br>
 <a href="/outfits/new">Create new outfit!</a>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     get '/signup' do 
+        session.clear
         if !logged_in? 
             erb :'/users/signup'
         else 

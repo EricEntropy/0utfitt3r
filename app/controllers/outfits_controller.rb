@@ -2,6 +2,7 @@ class OutfitsController < ApplicationController
 
     get '/outfits' do 
         if !logged_in? 
+            session.clear
             redirect '/login'
         else 
             @outfits = Outfit.all
@@ -13,13 +14,15 @@ class OutfitsController < ApplicationController
         if !logged_in? 
             redirect '/login'
         else
+            @outfits = Outfit.all
             erb :'/outfits/new' 
         end 
     end 
 
     post '/outfits' do 
+        binding.pry
         if logged_in? 
-            if params[:name] == ""
+            if params[:name] == "" || params[:tops] == ""|| params[:bottoms] == ""
                 redirect to '/outfits/new'
             else 
                 @outfit = current_user.outfits.build(params)
@@ -58,10 +61,9 @@ class OutfitsController < ApplicationController
             redirect '/login'
         else
             @outfit = Outfit.find(params[:id])
-            if !params[:name] == ""
+            if params[:name] == "" || params[:tops] == ""|| params[:bottoms] == ""
                 redirect to "/outfits/#{@outfit.id}/edit"
             else 
-                binding.pry
                 @outfit.name = params[:name]
                 @outfit.tops = params[:tops]
                 @outfit.bottoms = params[:bottoms]

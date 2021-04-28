@@ -1,0 +1,13 @@
+<h2> Here are Outfits: </h2>
+    <%@outfits.each do |fit|%>
+        <%if !(fit.name == "")%>
+        By <%=fit.user.username%>
+        <ul>
+            <li> <b>Name:</b> <%= fit.name.capitalize%></li>
+            <li> <b>Top:</b> <%= fit.tops.capitalize%> </li>
+            <li> <b>Bottoms:</b> <%= fit.bottoms.capitalize%></li>
+        </ul>
+        <br>
+        <%end%>
+    <%end%>
+<br>

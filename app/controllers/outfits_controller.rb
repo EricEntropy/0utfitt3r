@@ -6,11 +6,22 @@ class OutfitsController < ApplicationController
             redirect '/login'
         else 
             @outfits = Outfit.all
+            params.clear 
             erb :'/outfits/outfits'
         end 
     end 
 
+    get '/outfits/browse' do 
+        if !logged_in? 
+            redirect '/login'
+        else
+            @outfits = Outfit.all
+            erb :'/outfits/browse'
+        end 
+    end 
+
     get '/outfits/new' do 
+        params.clear 
         if !logged_in? 
             redirect '/login'
         else
@@ -20,7 +31,6 @@ class OutfitsController < ApplicationController
     end 
 
     post '/outfits' do 
-        binding.pry
         if logged_in? 
             if params[:name] == "" || params[:tops] == ""|| params[:bottoms] == ""
                 redirect to '/outfits/new'

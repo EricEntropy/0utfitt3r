@@ -5,11 +5,16 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 <label>Edit Here:</label>
 <br>
-<input type="text" name="name" id="name"> value = <%=@outfit.name%></input>
+<input type="text" name="name" id="name"> value: <%=@outfit.name.capitalize%></input>
 <br>
-<input type="text" name="tops" id="tops"> value = <%=@outfit.tops%></input>
+<input type="text" name="tops" id="tops"> value: <%=@outfit.tops.capitalize%></input>
 <br>
-<input type="text" name="bottoms" id="bottoms"> value = <%=@outfit.bottoms%></input>
+<input type="text" name="bottoms" id="bottoms"> value: <%=@outfit.bottoms.capitalize%></input>
 <br>
 <input type="submit" value="Finish Edit">
+</form>
+<form action="/outfits/<%=@outfit.id%>/delete" method="POST">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<br>
+<input type="submit" value="Delete Outfit">
 </form>

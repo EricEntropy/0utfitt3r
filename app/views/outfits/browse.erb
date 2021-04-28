@@ -6,7 +6,11 @@
             <li> <b>Name:</b> <%= fit.name.capitalize%></li>
             <li> <b>Top:</b> <%= fit.tops.capitalize%> </li>
             <li> <b>Bottoms:</b> <%= fit.bottoms.capitalize%></li>
-        </ul>
+            <form action="/outfits/<%=fit.id%>/add" method="POST">
+            <input id="hidden" type="hidden" name="_method" value="add">
+            <input type="submit" value="add to your collection!">
+            </form>        
+            </ul>
         <br>
         <%end%>
     <%end%>

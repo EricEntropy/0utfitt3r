@@ -20,6 +20,16 @@ class OutfitsController < ApplicationController
         end 
     end 
 
+    post '/outfits/:id/add' do 
+        if !logged_in? 
+            redirect '/login'
+        else
+            new_outfit = Outfit.find(params[:id])
+            current_user.outfits << new_outfit
+            redirect to '/outfits'
+        end 
+    end 
+            
     get '/outfits/new' do 
         params.clear 
         if !logged_in? 

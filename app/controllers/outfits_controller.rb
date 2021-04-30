@@ -24,9 +24,18 @@ class OutfitsController < ApplicationController
         if !logged_in? 
             redirect '/login'
         else
-            new_outfit = Outfit.find(params[:id])
-            current_user.outfits << new_outfit
-            redirect to '/outfits'
+            outfit = Outfit.find(params[:id])
+            new_outfit = Outfit.new
+            new_outfit.name = outfit.name
+            new_outfit.tops = outfit.tops
+            new_outfit.bottoms = outfit.bottoms
+            new_outfit.user_id = current_user.id
+            new_outfit.save
+            if new_outfit.save
+                redirect to "/outfits"
+            else 
+                redirect to '/outfits/error'
+            end
         end 
     end 
             

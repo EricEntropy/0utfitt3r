@@ -1,4 +1,4 @@
-<h2> Here are some Outfits made by other creators: </h2>
+<h2>Outfits made by other creators: </h2>
     <%@outfits.each do |fit|%>
         <%if !(fit.name == "") && !(fit.user == current_user)%>
         By <%=fit.user.username%>

@@ -1,15 +1,23 @@
-<h1>Edit your Outfit</h1>
+<h1>Edit your Outfit Here!</h1>
 
 
 <form action="/outfits/<%=@outfit.id%>/edit" method="POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
-<label>Edit Here:</label>
 <br>
-<input type="text" name="name" id="name"> value: <%=@outfit.name.capitalize%></input>
+<label>Outfit Name:</label>
 <br>
-<input type="text" name="tops" id="tops"> value: <%=@outfit.tops.capitalize%></input>
+<input type="text" name="name" id="name" value="<%=@outfit.name.capitalize%>"</input>
 <br>
-<input type="text" name="bottoms" id="bottoms"> value: <%=@outfit.bottoms.capitalize%></input>
+<br>
+<label>Outfit Top:</label>
+<br>
+<input type="text" name="tops" id="tops" value="<%=@outfit.tops.capitalize%>"</input>
+<br>
+<br>
+<label>Outfit Bottoms:</label>
+<br>
+<input type="text" name="bottoms" id="bottoms" value="<%=@outfit.bottoms.capitalize%>"</input>
+<br>
 <br>
 <input type="submit" value="Finish Edit">
 </form>

@@ -4,7 +4,7 @@ Welcome to Outfitt3r!
 Outfitt3r was designed to be a simple library for your favorite outfits. Outfitter provides an easy way to sign up to start keeping track of your outfits! 
 
 An Outfitt3r user can: 
-- Sign up with an Username, Email and password.
+- Sign up with an Username, Email and Password.
 - Log in and Log out 
 - Create a New Outfit
 - Edit Outfits

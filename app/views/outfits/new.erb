@@ -6,27 +6,12 @@
   <input type="text" name="name" id="name"></input>
   <br>
   <br>
-  <h4>Choose Existing Tops or Make a New One</h4>
-  <% @outfits.each do |fit| %>
-    <% if !fit.tops.empty? && fit.user_id == current_user.id%>
-      <input type="radio" name="tops" 
-      id="tops" value="<%=fit.tops%>"><%= fit.tops.capitalize %><br>
-    <% end %>
-  <% end %>
-  <br>
   <label>New Top:</label>
   <br>
   <input type="text" name="tops" id="tops" ></input>
   <br>
   <br>
-  <h4>Choose Existing Bottoms or Make a New One</h4>
-  <% @outfits.each do |fit| %>
-    <% if !fit.bottoms.empty? && fit.user_id == current_user.id%>
-      <input type="checkbox" name="bottoms" 
-      id="bottoms" value="<%=fit.bottoms%>"> <%= fit.bottoms.capitalize %><br>
-    <% end %>
-  <% end %>
-  <label>Bottoms:</label>
+  <label>New Bottoms:</label>
   <br>
   <input type="text" name="bottoms" id="bottoms"></input>
   <br>

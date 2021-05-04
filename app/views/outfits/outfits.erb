@@ -1,7 +1,7 @@
 <h1> Welcome, <%=current_user.username.capitalize%>! </h1>
 
 <% if current_user.outfits.empty?%>
-<h2> No Outfits to Show</h2>
+<h2> No Outfits to Show... For now! :p</h2>
 <%else%>
 <h2> Here are your Outfits: </h2>
     <%@outfits.each do |fit|%>
